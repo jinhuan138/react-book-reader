@@ -5,6 +5,8 @@ import React, {
 	forwardRef,
 	useImperativeHandle,
 } from "react";
+import '../utils/foliate-js/vendor/pdfjs/pdf.worker.js'
+import '../utils/foliate-js/vendor/pdfjs/pdf.js'
 import { getView } from "../utils/reader";
 import {
 	clickListener,

@@ -5,7 +5,8 @@ import './App.css'
 const App = () => {
   return (
     <div style={{ height: '100vh' }}>
-      <ReactReader url="/files/啼笑因缘.azw3" />
+      {/* Supports EPUB, MOBI, KF8 (AZW3), FB2, CBZ, PDF */}
+      <ReactReader url="/files/啼笑因缘.pdf" />
     </div>
   )
 }
