@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import { name } from './package.json'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),cssInjectedByJsPlugin()],
+  plugins: [react(), cssInjectedByJsPlugin()],
   build: {
     copyPublicDir: false,
     emptyOutDir: true,
@@ -12,9 +13,9 @@ export default defineConfig({
     minify: true,
     outDir: 'lib',
     lib: {
-      entry: 'src/modules/index.ts',
-      name: 'react-book-reader',
-      fileName: (format) => `react-book-reader.${format}.js`,
+      entry: 'src/packages/index.ts',
+      name,
+      fileName: (format) => `${name}.${format}.js`,
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
