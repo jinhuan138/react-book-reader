@@ -65,76 +65,6 @@
 	border-radius: 0.5rem;
 }
 
-.tocArea .tocAreaButton {
-	user-select: none;
-	appearance: none;
-	background: none;
-	border: none;
-	display: block;
-	font-family: sans-serif;
-	width: 100%;
-	font-size: 0.9em;
-	text-align: left;
-	padding: 0.9em 1em;
-	border-bottom: 1px solid #ddd;
-	color: #aaa;
-	box-sizing: border-box;
-	outline: none;
-	cursor: pointer;
-	position: relative;
-}
-
-.tocArea .tocAreaButton:hover {
-	background: rgba(0, 0, 0, 0.05);
-}
-
-.tocArea .tocAreaButton:active {
-	background: rgba(0, 0, 0, 0.1);
-}
-
-.tocArea .active {
-	color: #1565c0;
-	border-bottom: 2px solid #1565c0;
-}
-
-/* 二级目录 */
-.tocArea .tocAreaButton .expansion {
-	cursor: pointer;
-	transform: translateY(-50%);
-	top: 50%;
-	right: 12px;
-	position: absolute;
-	width: 10px;
-	background-color: #a2a5b4;
-	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-}
-
-.tocArea .tocAreaButton .expansion::after,
-.tocArea .tocAreaButton .expansion::before {
-	content: "";
-	position: absolute;
-	width: 6px;
-	height: 2px;
-	background-color: currentcolor;
-	border-radius: 2px;
-	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-}
-/* ↓ */
-.tocArea .tocAreaButton .expansion::before {
-	transform: rotate(-45deg) translateX(2.5px);
-}
-
-.tocArea .tocAreaButton .expansion::after {
-	transform: rotate(45deg) translateX(-2.5px);
-}
-/* ↑ */
-.tocArea .tocAreaButton .open::before {
-	transform: rotate(45deg) translateX(2.5px);
-}
-
-.tocArea .tocAreaButton .open::after {
-	transform: rotate(-45deg) translateX(-2.5px);
-}
 /* tocButton */
 .tocButton {
 	background: none;
@@ -201,11 +131,22 @@
 
 /* loading */
 .loadingView {
-	position: absolute;
-	top: 50%;
-	left: 10%;
-	right: 10%;
-	color: #ccc;
-	text-align: center;
-	margin-top: -0.5em;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  color: #ccc;
+  text-align: center;
+  margin-top: -0.5em;
+}
+
+/* errorView */
+.errorView {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  color: #c00;
+  text-align: center;
+  margin-top: -0.5em;
 }

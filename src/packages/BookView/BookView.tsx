@@ -1,9 +1,10 @@
-import React, {
+import {
   useState,
   useRef,
   useEffect,
   forwardRef,
   useImperativeHandle,
+  ReactElement,
 } from 'react'
 import {
   clickListener,
@@ -12,13 +13,37 @@ import {
   keyListener,
 } from '../utils/listener/listener'
 import './style.css'
-
-const BookView: React.FC<any> = forwardRef((props, ref) => {
-  const { url, getRendition, tocChanged, loadingView } = props
+interface FoliateViewElement extends HTMLElement {
+  open: (url: string | File) => Promise<void>
+  close: () => void
+  goTo: (location: string | number) => void
+  next: () => void
+  prev: () => void
+  renderer: any
+  book: {
+    toc: any[]
+  }
+}
+interface BookViewProps {
+  url: String | File
+  location?: string | number
+  getRendition?: (rendition: FoliateViewElement) => void
+  tocChanged?: (toc: any[]) => void
+  LoadingView: ReactElement
+  ErrorView: ReactElement
+}
+interface BookVieRef {
+  prevPage: () => void
+  nextPage: () => void
+  setLocation: (href: string | number) => void
+}
+export default forwardRef<BookVieRef, BookViewProps>((props, ref) => {
+  const { url, location, getRendition, tocChanged, LoadingView, ErrorView } =
+    props
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   const [isError, setIsError] = useState<boolean>(false)
   const viewer = useRef<HTMLDivElement | null>(null)
-  let view: any
+  let view: null | FoliateViewElement = null
 
   const initBook = async () => {
     try {
@@ -26,8 +51,8 @@ const BookView: React.FC<any> = forwardRef((props, ref) => {
         if (view) {
           view.close()
         } else {
-          view = document.createElement('foliate-view')
-          viewer.current?.append(view)
+          view = document.createElement('foliate-view') as FoliateViewElement
+          viewer.current!.append(view)
         }
         await view.open(url)
         getRendition && getRendition(view)
@@ -40,13 +65,15 @@ const BookView: React.FC<any> = forwardRef((props, ref) => {
   }
 
   const initReader = () => {
-    if (!view) return
     setIsLoaded(true)
-    const { book } = view
+    const { book } = view!
     registerEvents()
-    getRendition && getRendition(view)
     tocChanged && tocChanged(book.toc)
-    view.renderer.next()
+    if (location) {
+      view!.goTo(location)
+    } else {
+      view!.renderer.next()
+    }
   }
 
   const flipPage = (direction: string) => {
@@ -55,8 +82,8 @@ const BookView: React.FC<any> = forwardRef((props, ref) => {
   }
 
   const registerEvents = () => {
-    view.addEventListener('load', onLoad)
-    view.addEventListener('relocate', onRelocate)
+    view!.addEventListener('load', onLoad)
+    view!.addEventListener('relocate', onRelocate)
   }
 
   const onLoad = ({ detail: { doc } }) => {
@@ -67,12 +94,11 @@ const BookView: React.FC<any> = forwardRef((props, ref) => {
 
   const onRelocate = ({ detail }) => {}
 
-  const nextPage = () => view?.next()
+  const nextPage = () => view!.next()
 
-  const prevPage = () => view?.prev()
+  const prevPage = () => view!.prev()
 
-  const setLocation = (href: string | number) => view?.goTo(href)
-
+  const setLocation = (href: string | number) => view!.goTo(href)
   useImperativeHandle(ref, () => ({ prevPage, nextPage, setLocation }))
 
   useEffect(() => {
@@ -93,10 +119,9 @@ const BookView: React.FC<any> = forwardRef((props, ref) => {
           id="viewer"
           style={{ display: isLoaded ? '' : 'none' }}
         ></div>
-        {isLoaded && (loadingView)}
+        {isLoaded && LoadingView}
+        {isError && ErrorView}
       </div>
     </div>
   )
 })
-
-export default BookView
