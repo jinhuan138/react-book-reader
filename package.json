@@ -22,7 +22,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "compile": "vite build"
+    "compile": "vite build",
+    "docs:dev": "npm -C docs run dev",
+    "docs:build": "npm -C docs run docs:build",
+    "docs:preview": "npm -C docs run docs:preview"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

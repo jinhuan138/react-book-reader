@@ -29,6 +29,7 @@ interface BookViewProps {
   location?: string | number
   getRendition?: (rendition: FoliateViewElement) => void
   tocChanged?: (toc: any[]) => void
+  onUpdateLocation?: (location: any) => void
   LoadingView: ReactElement
   ErrorView: ReactElement
 }
@@ -38,7 +39,7 @@ interface BookVieRef {
   setLocation: (href: string | number) => void
 }
 export default forwardRef<BookVieRef, BookViewProps>((props, ref) => {
-  const { url, location, getRendition, tocChanged, LoadingView, ErrorView } =
+  const { url, location, getRendition, tocChanged,onUpdateLocation, LoadingView, ErrorView } =
     props
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   const [isError, setIsError] = useState<boolean>(false)
@@ -92,7 +93,9 @@ export default forwardRef<BookVieRef, BookViewProps>((props, ref) => {
     keyListener(doc, flipPage)
   }
 
-  const onRelocate = ({ detail }) => {}
+  const onRelocate = ({ detail }) => {
+    onUpdateLocation && onUpdateLocation(detail)
+  }
 
   const nextPage = () => view!.next()
 

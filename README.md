@@ -4,20 +4,18 @@
 npm install react-book-reader --save
 ```
 
-And in your vue-component...
+And in your react-component...
 
-```react
+```jsx
 import { ReactReader } from 'react-book-reader'
 
-const App = () => {
+export default () => {
   return (
     <div style={{ height: '100vh' }}>
       {/* Supports EPUB, MOBI, KF8 (AZW3), FB2, CBZ, PDF */}
-      <ReactReader url="/files/啼笑因缘.azw3" />
+      <ReactReader url="/files/梵高手稿.epub" />
     </div>
   )
 }
-
-export default App
 ```
 
