@@ -5,7 +5,8 @@ export default defineConfig({
   outputPath: 'docs-dist',
   themeConfig: {
     name: 'react-book-reader',
-    logo: "/logo.png"
+    logo: "/logo.png",
+    nav: false
   },
   jsMinifierOptions: {
     target: 'es2020',

@@ -1,8 +1,20 @@
-<!-- # an easy way to embed a reader into your webapp -->
+# Introduction
 
-```bash
+an vue wrapper for [foliate-js](https://github.com/johnfactotum/foliate-js) - library for rendering e-books in the browser
+
+## Installation
+
+::: code-group
+```bash [npm]
 npm install react-book-reader --save
 ```
+
+```bash [pnpm]
+pnpm add  react-book-reader --save
+```
+:::
+
+## Basic Usage
 
 And in your react-component...
 
@@ -13,7 +25,7 @@ export default () => {
   return (
     <div style={{ height: '100vh' }}>
       {/* Supports EPUB, MOBI, KF8 (AZW3), FB2, CBZ, PDF */}
-      <ReactReader url="/files/梵高手稿.epub" />
+      <ReactReader url="/files/啼笑因缘.epub" />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 {
   "name": "react-book-reader",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "type": "module",
   "main": "lib/react-book-reader.cjs.js",
   "module": "lib/react-book-reader.es.js",
@@ -19,8 +19,9 @@
     "PDF"
   ],
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "compile": "vite build",
     "docs:dev": "npm -C docs run dev",
@@ -38,9 +39,13 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "prettier": "^3.2.5",
     "react": "^18.3.1",
+    "react-book-reader": "^1.0.1",
     "react-dom": "^18.2.0",
     "typescript": "^5.2.2",
     "vite": "^7.3.1",
     "vite-plugin-css-injected-by-js": "^3.5.1"
+  },
+  "dependencies": {
+    "core-js": "^3.48.0"
   }
 }

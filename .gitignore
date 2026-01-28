@@ -6,12 +6,11 @@ dist
 !.vscode/extensions.json
 
 # Docs
-docs/dist
-docs/.dumi/tmp
-docs/.dumi/tmp-test
-docs/.dumi/tmp-production
-docs/.DS_Store
-docs-dist
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production
+.DS_Store
+docs/docs-dist
 
 # Library
 lib
