@@ -9,6 +9,7 @@
   ],
   "keywords": [
     "react",
+    "ebook",
     "reader",
     "epub",
     "MOBI",
@@ -18,6 +19,7 @@
     "CBZ",
     "PDF"
   ],
+  "homepage": "https://jinhuan138.github.io/react-book-reader/",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "vite",

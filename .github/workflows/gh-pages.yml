@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      # ✅ 添加 pnpm 安装步骤
+      # 安装pnpm
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -28,15 +28,15 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-
+      # 安装依赖
       - name: Install dependencies
         run: pnpm install
-
+      # 构建
       - name: Build with dumi
-        run: pnpm run docs:build  # ✅ 改为 pnpm
-
+        run: pnpm run docs:build 
+      # 部署
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs-dist
+          publish_dir: ./docs/docs-dist
