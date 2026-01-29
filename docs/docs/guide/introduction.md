@@ -1,6 +1,6 @@
 # Introduction
 
-an vue wrapper for [foliate-js](https://github.com/johnfactotum/foliate-js) - library for rendering e-books in the browser
+a react wrapper for [foliate-js](https://github.com/johnfactotum/foliate-js) - library for rendering e-books in the browser
 
 ## Installation
 
