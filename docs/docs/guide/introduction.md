@@ -4,13 +4,13 @@ an vue wrapper for [foliate-js](https://github.com/johnfactotum/foliate-js) - li
 
 ## Installation
 
-::: code-group
+:::code-group
 ```bash [npm]
-npm install react-book-reader --save
+npm install react-book-reader
 ```
 
 ```bash [pnpm]
-pnpm add  react-book-reader --save
+pnpm add  react-book-reader
 ```
 :::
 
@@ -25,7 +25,7 @@ export default () => {
   return (
     <div style={{ height: '100vh' }}>
       {/* Supports EPUB, MOBI, KF8 (AZW3), FB2, CBZ, PDF */}
-      <ReactReader url="/files/啼笑因缘.epub" />
+      <ReactReader url="/react-book-reader/files/啼笑因缘.epub" />
     </div>
   )
 }
