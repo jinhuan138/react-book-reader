@@ -1,6 +1,6 @@
 <div align="center">
   <img width=250 src="https://raw.githubusercontent.com/jinhuan138/react-book-reader/master/docs/public/logo.png" />
-  <h1>ReactReader</h1>
+  <h1>ReactBookReader</h1>
 </div>
 
 <p>
@@ -17,7 +17,7 @@
 
 <div align="center">
   <h2><a href="https://jinhuan138.github.io/react-book-reader/">📖Documentation</a></h2>
-
+</div>
 
 # Introduction
 
@@ -32,7 +32,7 @@ npm install react-book-reader --save
 
 And in your react-component...
 
-```jsx
+```vue
 import { ReactReader } from 'react-book-reader'
 
 export default () => {

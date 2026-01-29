@@ -73,6 +73,6 @@
     "stylelint": "^14.9.1"
   },
   "dependencies": {
-    "react-book-reader": "^1.0.1"
+    "react-book-reader": "^1.1.0"
   }
 }
