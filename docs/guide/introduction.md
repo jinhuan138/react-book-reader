@@ -1,49 +1,42 @@
-<div align="center">
-  <img width=250 src="https://raw.githubusercontent.com/jinhuan138/react-book-reader/master/docs/public/logo.png" />
-  <h1>ReactBookReader</h1>
-</div>
-
-<p>
-  <a href="https://www.npmjs.com/package/react-book-reader" target="_blank">
-    <img src="https://img.shields.io/npm/v/react-book-reader?style=flat-square" />
-  </a>
-  <a href="https://www.npmjs.com/package/react-book-reader" target="_blank" >
-    <img src="https://img.shields.io/npm/dw/react-book-reader?style=flat-square" />
-  </a>
-  <a href="./LICENSE">
-    <img src="https://img.shields.io/npm/l/react-book-reader?style=flat-square" />
-  </a>
-</p>
-
-<div align="center">
-  <h2><a href="https://jinhuan138.github.io/react-book-reader/">📖Documentation</a></h2>
-</div>
+---
+outline: [2,3]
+---
 
 # Introduction
 
-react-book-reader is a react wrapper for [foliate-js](https://github.com/johnfactotum/foliate-js) - library for rendering e-books in the browser.
-Supports EPUB, MOBI, KF8 (AZW3), FB2, CBZ, PDF (experimental; requires PDF.js), or add support for other formats yourself by implementing the book interface
+a react wrapper for [foliate-js](https://github.com/johnfactotum/foliate-js) - library for rendering e-books in the browser
 
-## Basic usage
+## Installation
 
-```bash
+::: code-group
+
+```sh [npm]
 npm install react-book-reader --save
 ```
 
-And in your react-component...
-
-```jsx
-import { ReactReader } from 'react-book-reader'
-
-export default () => (
-  <div style={{ height: '100vh' }}>
-    {/* Supports EPUB, MOBI, KF8 (AZW3), FB2, CBZ, PDF */}
-    <ReactReader url="/files/啼笑因缘.epub" />
-  </div>
-);
+```sh [pnpm]
+pnpm add react-book-reader --save
 ```
 
-## ReactReader Attributes
+:::
+
+## Basic Usage
+
+And in your react-component...
+
+<demo react="../demos/demo.tsx" />
+
+## Different Builds
+
+|       **Module**        |       **Filename**        |
+| ----------------------- | ------------------------- |
+|    UMD(for browsers)    | react-book-reader.umd.js  |
+|        CommonJS         | react--book-reader.cjs.js |
+| ES Module(for bundlers) | react--book-reader.es.js  |
+
+<style>
+
+   ## ReactReader Attributes
 
 | **Name** | **Description**                   | **Type**               | **Default** |
 | -------- | --------------------------------- | ---------------------- | ----------- |
@@ -64,3 +57,8 @@ export default () => (
 | setLocation | Set the page                                                                  | `function(href)` |
 | LoadingView | if you want to customize the LoadingView                                      | `element`        |
 | ErrorView   | if you want to customize the ErrorView                                        | `element`        |
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+</style>

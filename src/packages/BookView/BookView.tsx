@@ -140,8 +140,7 @@ export default forwardRef<BookVieRef, BookViewProps>((props, ref) => {
           id="viewer"
           style={{ display: isLoaded ? '' : 'none' }}
         ></div>
-        {isLoaded && LoadingView}
-        {isError && ErrorView}
+        {!isLoaded && (isError ? ErrorView : LoadingView)}
       </div>
     </div>
   )

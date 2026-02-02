@@ -1,6 +1,6 @@
 {
   "name": "react-book-reader",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "main": "lib/react-book-reader.cjs.js",
   "module": "lib/react-book-reader.es.js",
@@ -11,6 +11,7 @@
     "react",
     "ebook",
     "reader",
+    "foliate-js",
     "epub",
     "MOBI",
     "KF8",
@@ -26,11 +27,12 @@
     "build": "vite build",
     "preview": "vite preview",
     "compile": "vite build",
-    "docs:dev": "npm -C docs run dev",
+    "docs:dev": "npm -C docs run docs:dev",
     "docs:build": "npm -C docs run docs:build",
     "docs:preview": "npm -C docs run docs:preview"
   },
   "devDependencies": {
+    "@types/node": "^25.2.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

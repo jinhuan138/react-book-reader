@@ -5,12 +5,9 @@ dist
 .vscode/*
 !.vscode/extensions.json
 
-# Docs
-.dumi/tmp
-.dumi/tmp-test
-.dumi/tmp-production
-.DS_Store
-docs/docs-dist
+# vitepress docs cache
+docs/.vitepress/cache
+.vitepress/cache
 
 # Library
 lib
