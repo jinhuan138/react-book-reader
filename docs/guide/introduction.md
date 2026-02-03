@@ -36,7 +36,7 @@ And in your react-component...
 
 <style>
 
-   ## ReactReader Attributes
+## ReactReader Attributes
 
 | **Name** | **Description**                   | **Type**               | **Default** |
 | -------- | --------------------------------- | ---------------------- | ----------- |

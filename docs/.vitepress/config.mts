@@ -28,6 +28,7 @@ export default defineConfig({
         items: [
           { text: 'page number', link: 'tips/page_number' },
           { text: 'custom css', link: 'tips/custom_css' },
+          { text: 'import file', link: 'tips/import_file' },
         ],
       }
     ],

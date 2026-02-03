@@ -64,8 +64,8 @@ importers:
   docs:
     dependencies:
       react-book-reader:
-        specifier: ^1.1.1
-        version: 1.1.1
+        specifier: ^1.1.2
+        version: 1.1.2
     devDependencies:
       pdfjs-dist:
         specifier: ^4.7.76
@@ -1828,8 +1828,8 @@ packages:
   react-book-reader@1.1.0:
     resolution: {integrity: sha512-5gaTe78EL+fpNHxvylCKjPe3qXIOhn01PEPEoqis4jHx0TQxxWSh7yh6uhuSDEI2y7PhNAE2lWgtX3tezcOCGw==}
 
-  react-book-reader@1.1.1:
-    resolution: {integrity: sha512-cpTos3GTKw+F20xrzXQORFDEgi1lDZMWTy20vxH6jWz/P+ixI2Sad+2JJmkBkB/HeWxl3FWGE1Y0zsKZ3BgPqg==}
+  react-book-reader@1.1.2:
+    resolution: {integrity: sha512-e7UbB6YpdjJ3VObXfa4GEJ55dbPTPnwh1MCYmSXbHAshM+MENIX/Y+hz/xAQXO+TocppJ4Xe0kmrhzOFZq02/A==}
 
   react-dom@18.3.1:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
@@ -3843,7 +3843,7 @@ snapshots:
     dependencies:
       core-js: 3.48.0
 
-  react-book-reader@1.1.1:
+  react-book-reader@1.1.2:
     dependencies:
       core-js: 3.48.0
 

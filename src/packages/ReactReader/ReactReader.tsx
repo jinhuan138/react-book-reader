@@ -8,7 +8,8 @@ interface ReactReaderProps {
   getRendition?: (rendition: any) => void
   title?: string
   LoadingView?: ReactElement
-  ErrorView?: ReactElement
+  ErrorView?: ReactElement,
+  style?: React.CSSProperties
 }
 export default function ReactReader(props: ReactReaderProps) {
   const {
@@ -16,6 +17,8 @@ export default function ReactReader(props: ReactReaderProps) {
     getRendition,
     LoadingView,
     ErrorView,
+    style,
+    title,
     ...attrs
   } = props
   const bookRef = useRef<React.ElementRef<typeof BookView>>(null)
@@ -23,20 +26,17 @@ export default function ReactReader(props: ReactReaderProps) {
   const [expandedToc, setExpandedToc] = useState<boolean>(false)
   const [bookName, setBookName] = useState<string>('')
   const [currentHref, setCurrentHref] = useState<string>('')
-  let rendition = null
   const onGetRendition = (val: any) => {
     getRendition && getRendition(val)
     const { book } = val
-    rendition = val
-    const title = book.metadata?.title
-    setBookName(title || '')
+    setBookName(title || book.metadata?.title || '')
   }
 
   const onTocChange = (_toc) => {
     setToc(_toc)
   }
 
-  const pre = () => bookRef.current!.nextPage()
+  const pre = () => bookRef.current!.prevPage()
   const next = () => bookRef.current!.nextPage()
   const toggleToc = () => {
     setExpandedToc(!expandedToc)
@@ -48,7 +48,7 @@ export default function ReactReader(props: ReactReaderProps) {
     setExpandedToc(!close)
   }
   return (
-    <div className="container">
+    <div className="container" style={props.style}>
       <div className={`readerArea ${expandedToc ? 'containerExpanded' : ''}`}>
         {/* 展开目录 */}
         {showToc && (
@@ -62,12 +62,13 @@ export default function ReactReader(props: ReactReaderProps) {
         )}
         {/* 书名 */}
         <div className="titleArea" title={bookName}>
-          {/* {slots.title ? slots.title?.() : title.value || bookName.value} */}
+          {bookName}
         </div>
         {/* 阅读区 */}
         <BookView
+          // style={{display:'none'}}
           ref={bookRef}
-          onGetRendition={onGetRendition}
+          getRendition={onGetRendition}
           tocChanged={onTocChange}
           LoadingView={
             LoadingView || <div className="loadingView">Loading…</div>

@@ -32,7 +32,8 @@ interface BookViewProps {
   tocChanged?: (toc: any[]) => void
   onUpdateLocation?: (location: any) => void
   LoadingView: ReactElement
-  ErrorView: ReactElement
+  ErrorView: ReactElement,
+  style?: React.CSSProperties
 }
 interface BookVieRef {
   prevPage: () => void
@@ -52,7 +53,7 @@ if (typeof Promise.withResolvers === 'undefined') {
     }
 }
 export default forwardRef<BookVieRef, BookViewProps>((props, ref) => {
-  const { url, location, getRendition, tocChanged, onUpdateLocation, LoadingView, ErrorView } = props
+  const { url, location, getRendition, tocChanged, onUpdateLocation, LoadingView, ErrorView, style } = props
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   const [isError, setIsError] = useState<boolean>(false)
   const viewer = useRef<HTMLDivElement | null>(null)
@@ -133,7 +134,7 @@ export default forwardRef<BookVieRef, BookViewProps>((props, ref) => {
   }, [url])
 
   return (
-    <div className="reader">
+    <div className="reader" style={style}>
       <div className="viewHolder">
         <div
           ref={viewer}
