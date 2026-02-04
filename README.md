@@ -55,8 +55,8 @@ export default () => (
 
 ## ReactReader props passed to inner BookView
 
-| **Name**    | **Description**                           | **Type**                          |                  |
-| ----------- | ----------------------------------------------------------------------------  | ---------------- |
+| **Name**    | **Description**                           | **Type**                          | **Default**      |
+| ----------- | ----------------------------------------- | --------------------------------- | ---------------- |
 | url         | book url or File                          | `string`/`File`                   |                  |
 | tocChanged  | when the reader has parsed the book you will receive an array of the chapters | `function(toc)`  |
 | nextPage    | display  next page                                                            | `function`       |

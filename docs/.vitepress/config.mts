@@ -28,7 +28,11 @@ export default defineConfig({
         items: [
           { text: 'page number', link: 'tips/page_number' },
           { text: 'custom css', link: 'tips/custom_css' },
+          { text: 'smooth scroll', link: 'tips/smooth_scroll' },
+          { text: 'scrolled', link: 'tips/scrolled' },
+          { text: 'book information', link: 'tips/book_information' },
           { text: 'import file', link: 'tips/import_file' },
+          { text: 'pdf file', link: 'tips/pdf_file' },
         ],
       }
     ],

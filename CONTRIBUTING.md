@@ -37,6 +37,8 @@ PDF.js has been removed from the core library to optimize for Vite build and red
 -        ${textLayerBuilderCSS}
 -        ${annotationLayerBuilderCSS}
 ...
+-  cMapUrl: pdfjsPath('cmaps/'),
+-  standardFontDataUrl: pdfjsPath('standard_fonts/'),
 ```
 
 ## Development react-book-reader
