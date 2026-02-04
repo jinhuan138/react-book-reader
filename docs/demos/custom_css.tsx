@@ -3,10 +3,10 @@ import { ReactReader } from 'react-book-reader'
 export default function App() {
     const getCSS = () => [
         `
-    html {
-      background: #000;
-      color: #fff;
-    }`,
+        html {
+        background: #000;
+        color: #fff;
+        }`,
     ]
     const getRendition = (rendition) => {
         rendition.addEventListener('load', () => {
