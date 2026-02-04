@@ -35,7 +35,7 @@ interface BookViewProps {
   ErrorView: ReactElement,
   style?: React.CSSProperties
 }
-interface BookVieRef {
+interface BookViewRef {
   prevPage: () => void
   nextPage: () => void
   setLocation: (href: string | number) => void
@@ -52,7 +52,7 @@ if (typeof Promise.withResolvers === 'undefined') {
       return { promise, resolve, reject }
     }
 }
-export default forwardRef<BookVieRef, BookViewProps>((props, ref) => {
+export default forwardRef<BookViewRef, BookViewProps>((props, ref) => {
   const { url, location, getRendition, tocChanged, onUpdateLocation, LoadingView, ErrorView, style } = props
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   const [isError, setIsError] = useState<boolean>(false)
@@ -118,20 +118,16 @@ export default forwardRef<BookVieRef, BookViewProps>((props, ref) => {
   const setLocation = (href: string | number) => view.current!.goTo(href)
   useImperativeHandle(ref, () => ({ prevPage, nextPage, setLocation }))
 
-  useEffect(() => {
-    if (viewer.current && !customElements.get('foliate-view')) {
-      import('../foliate-js/view.js').then(() => {
-        initBook()
-      })
-    }
-  }, [viewer.current])
-  useEffect(() => {
-    if (isFirstRender) {
+  if (isFirstRender) {
+    import('../foliate-js/view.js').then(() => {
       setIsFirstRender(false)
-    } else {
+    })
+  }
+  useEffect(() => {
+    if (!isFirstRender) {
       initBook()
     }
-  }, [url])
+  }, [url, isFirstRender])
 
   return (
     <div className="reader" style={style}>

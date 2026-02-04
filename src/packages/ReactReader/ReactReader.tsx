@@ -66,7 +66,6 @@ export default function ReactReader(props: ReactReaderProps) {
         </div>
         {/* 阅读区 */}
         <BookView
-          // style={{display:'none'}}
           ref={bookRef}
           getRendition={onGetRendition}
           tocChanged={onTocChange}
