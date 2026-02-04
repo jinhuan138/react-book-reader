@@ -20,7 +20,12 @@
     "CBZ",
     "PDF"
   ],
+  "license": "Apache",
   "homepage": "https://jinhuan138.github.io/react-book-reader/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jinhuan138/react-book-reader.git"
+  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "vite",
@@ -51,5 +56,6 @@
   },
   "dependencies": {
     "core-js": "^3.48.0"
-  }
+  },
+  "packageManager": "pnpm@9.6.0"
 }
