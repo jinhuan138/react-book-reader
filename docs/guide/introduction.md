@@ -34,8 +34,6 @@ And in your react-component...
 |        CommonJS         | react--book-reader.cjs.js |
 | ES Module(for bundlers) | react--book-reader.es.js  |
 
-<style>
-
 ## ReactReader Attributes
 
 | **Name** | **Description**                   | **Type**               | **Default** |
@@ -54,10 +52,11 @@ And in your react-component...
 | tocChanged  | when the reader has parsed the book you will receive an array of the chapters | `function(toc)`  |
 | nextPage    | display  next page                                                            | `function`       |
 | prevPage    | display  previous page                                                        | `function`       |
-| setLocation | Set the page                                                                  | `function(href)` |
+| setLocation | set the page                                                                  | `function(href)` |
 | LoadingView | if you want to customize the LoadingView                                      | `element`        |
 | ErrorView   | if you want to customize the ErrorView                                        | `element`        |
 
+<style>
 html:focus-within {
   scroll-behavior: smooth;
 }
