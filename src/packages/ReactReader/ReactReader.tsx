@@ -1,4 +1,4 @@
-import React, { useState, useRef, ReactElement } from 'react'
+import React, { useState, useRef, ReactElement, isValidElement } from 'react'
 import BookView from '../BookView/BookView.tsx'
 import Toc from './Toc.tsx'
 import './style.css'
@@ -6,7 +6,7 @@ interface ReactReaderProps {
   url: string | File
   showToc?: boolean
   getRendition?: (rendition: any) => void
-  title?: string
+  title?: string | ReactElement
   LoadingView?: ReactElement
   ErrorView?: ReactElement,
   style?: React.CSSProperties
@@ -29,7 +29,11 @@ export default function ReactReader(props: ReactReaderProps) {
   const onGetRendition = (val: any) => {
     getRendition && getRendition(val)
     const { book } = val
-    setBookName(title || book.metadata?.title || '')
+    if (typeof title === "string") {
+      setBookName(title)
+    } else {
+      setBookName(book.metadata?.title || '')
+    }
   }
 
   const onTocChange = (_toc) => {
@@ -47,6 +51,7 @@ export default function ReactReader(props: ReactReaderProps) {
     setCurrentHref(href)
     setExpandedToc(!close)
   }
+
   return (
     <div className="container" style={props.style}>
       <div className={`readerArea ${expandedToc ? 'containerExpanded' : ''}`}>
@@ -62,7 +67,7 @@ export default function ReactReader(props: ReactReaderProps) {
         )}
         {/* 书名 */}
         <div className="titleArea" title={bookName}>
-          {bookName}
+          {isValidElement(title) ? title : bookName}
         </div>
         {/* 阅读区 */}
         <BookView

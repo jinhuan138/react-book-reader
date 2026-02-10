@@ -45,19 +45,19 @@ export default () => (
 
 ## ReactReader Attributes
 
-| **Name** | **Description**                   | **Type**               | **Default** |
-| -------- | --------------------------------- | ---------------------- | ----------- |
-| url      | book url or File                  | `string`/`File`        | —           |
-| location | set / update location of the book | `string`/`number`      | —           |
-| title    | the title of the book             | `string`               | —           |
-| showToc  | whether to show the toc           | `boolean`              | true        |
+| **Name** | **Description**                   | **Type**                | **Default** |
+| -------- | --------------------------------- | ----------------------- | ----------- |
+| url      | book url or File                  | `string`|`File`         | —           |
+| location | set / update location of the book | `string`|`number`       | —           |
+| title    | the title of the book             | `string`|`ReactElement` | —           |
+| showToc  | whether to show the toc           | `boolean`               | true        |
 
 
 ## ReactReader props passed to inner BookView
 
 | **Name**    | **Description**                           | **Type**                          | **Default**      |
 | ----------- | ----------------------------------------- | --------------------------------- | ---------------- |
-| url         | book url or File                          | `string`/`File`                   |                  |
+| url         | book url or File                          | `string`|`File`                   |                  |
 | tocChanged  | when the reader has parsed the book you will receive an array of the chapters | `function(toc)`  |
 | nextPage    | display  next page                                                            | `function`       |
 | prevPage    | display  previous page                                                        | `function`       |
