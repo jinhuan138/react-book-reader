@@ -1,13 +1,10 @@
 node_modules
-dist
-
 # Editor directories and files
 .vscode/*
-!.vscode/extensions.json
 
 # vitepress docs cache
 docs/.vitepress/cache
-.vitepress/cache
+docs/.vitepress/dist
 
 # Library
 lib
