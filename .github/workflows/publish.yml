@@ -11,15 +11,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
+        
+      - uses: pnpm/action-setup@v3 # 使用 pnpm
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+          node-version: 20
+          cache: pnpm # 缓存设置为 pnpm
+          version: 9.6.0 # 您可以根据需要指定特定的 pnpm 版本
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Install dependencies
+        run: pnpm install # 使用 pnpm 安装依赖
 
       - name: Install dependencies
         run: pnpm install
