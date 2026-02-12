@@ -63,6 +63,9 @@ importers:
       vite-plugin-css-injected-by-js:
         specifier: ^3.5.1
         version: 3.5.2(vite@7.3.1(@types/node@25.2.0)(jiti@2.6.1)(less@4.5.1)(lightningcss@1.22.1)(sass@1.97.3)(terser@5.46.0))
+      yet-another-react-lightbox-lite:
+        specifier: ^1.10.0
+        version: 1.10.0(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   docs:
     dependencies:
@@ -72,6 +75,9 @@ importers:
       vitepress-demo-plugin:
         specifier: ^1.5.1
         version: 1.5.1(shiki@2.5.0)(vitepress@1.6.4(@algolia/client-search@5.47.0)(@types/node@25.2.0)(@types/react@18.3.27)(less@4.5.1)(lightningcss@1.22.1)(nprogress@0.2.0)(postcss@8.5.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.97.3)(search-insights@2.17.3)(terser@5.46.0)(typescript@5.9.3))(vue@3.5.27(typescript@5.9.3))
+      yet-another-react-lightbox-lite:
+        specifier: ^1.10.0
+        version: 1.10.0(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       pdfjs-dist:
         specifier: ^4.7.76
@@ -2235,6 +2241,20 @@ packages:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
 
+  yet-another-react-lightbox-lite@1.10.0:
+    resolution: {integrity: sha512-T9zsIN3bEgbnnCegqhurlHifBuG3tIe/WflmGMQ4KyyGB3//WoCN4f5KrWnuG2oz69MuefJq/E5rARhanNr02Q==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/react': ^18 || ^19
+      '@types/react-dom': ^18 || ^19
+      react: ^18 || ^19
+      react-dom: ^18 || ^19
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
@@ -4333,6 +4353,14 @@ snapshots:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.1.1
+
+  yet-another-react-lightbox-lite@1.10.0(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.27
+      '@types/react-dom': 18.3.7(@types/react@18.3.27)
 
   yocto-queue@0.1.0: {}
 

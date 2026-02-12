@@ -32,6 +32,7 @@ export default defineConfig({
           { text: 'scrolled', link: 'tips/scrolled' },
           { text: 'book information', link: 'tips/book_information' },
           { text: 'import file', link: 'tips/import_file' },
+          { text: "lightbox", link: "tips/lightbox" },
           { text: 'pdf file', link: 'tips/pdf_file' },
         ],
       }

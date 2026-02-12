@@ -11,8 +11,8 @@ export default function App() {
     }
     return (
         <div style={{ height: '100vh' }}>
-            <ReactReader url="/react-book-reader/files/啼笑因缘.epub" getRendition={getRendition} />
-            <div >{page}</div>
+            <ReactReader url="/react-book-reader/files/啼笑因缘.fb2" getRendition={getRendition} />
+            <div style={{textAlign: 'center'}}>{page}</div>
         </div>
     )
 }

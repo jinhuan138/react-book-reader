@@ -6,6 +6,7 @@ import { name, version } from './package.json'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: name,
   plugins: [react(), cssInjectedByJsPlugin(), visualizer({
     filename: `stats${version}.html`,
   }) as PluginOption],

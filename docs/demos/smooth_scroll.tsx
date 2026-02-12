@@ -1,6 +1,6 @@
 import { ReactReader } from 'react-book-reader'
 
-export default function Demo() {
+export default function App() {
     const getRendition = (rendition) => {
         rendition.renderer.setAttribute('animated', '')
         //rendition.value.renderer.removeAttribute('animated')
