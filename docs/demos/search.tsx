@@ -7,7 +7,6 @@ interface SearchItem {
     cfi: string
 }
 export default function App() {
-
     const [searchText, setSearchText] = useState('只在捻花一笑中')
     const [searchResults, setSearchResults] = useState<SearchItem[]>([])
 
@@ -47,18 +46,32 @@ export default function App() {
     }
     return (
         <div style={{ height: '100vh' }}>
-            <ReactReader url="/react-book-reader/files/啼笑因缘.mobi" getRendition={val => rendition = val} />
-            <div className="search">
-                <input placeholder="search" value={searchText} onChange={(e) => setSearchText(e.target.value)} onKeyDown={e => e.key === 'Enter' && search()} />
-                {!searchResults.length ? (
-                    <div>Empty</div>
-                ) : (
-                    searchResults.map(item => (
-                        <div key={item.cfi} onClick={() => rendition.goTo(item.cfi)}>
-                            <span dangerouslySetInnerHTML={{ __html: item.label }} ></span>
-                        </div>
-                    ))
-                )}
+            <ReactReader
+                url="/react-book-reader/files/啼笑因缘.mobi"
+                getRendition={(val) => (rendition = val)}
+            />
+            <div className="absolute bottom-4 right-4 left-4 text-center z-[1] text-black bg-white flex items-center justify-center">
+                <input
+                    placeholder="search"
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && search()}
+                />
+                <div className="w-200">
+                    {!searchResults.length ? (
+                        <div>Empty</div>
+                    ) : (
+                        searchResults.map((item) => (
+                            <div
+                                key={item.cfi}
+                                className="cursor-pointer rounded overflow-hidden whitespace-nowrap text-ellipsis border-b border-black hover:bg-black/5"
+                                onClick={() => rendition.goTo(item.cfi)}
+                            >
+                                <span dangerouslySetInnerHTML={{ __html: item.label }}></span>
+                            </div>
+                        ))
+                    )}
+                </div>
             </div>
         </div>
     )

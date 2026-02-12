@@ -33,6 +33,7 @@ export default defineConfig({
           { text: 'book information', link: 'tips/book_information' },
           { text: 'import file', link: 'tips/import_file' },
           { text: 'current progress', link: 'tips/current_progress' },
+          { text: 'search', link: 'tips/search' },
           { text: 'lightbox', link: 'tips/lightbox' },
           { text: 'pdf file', link: 'tips/pdf_file' },
         ],
