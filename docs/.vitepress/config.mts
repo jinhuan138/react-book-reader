@@ -1,30 +1,30 @@
 import { defineConfig } from 'vitepress'
 import { resolve } from 'path'
-import { vitepressDemoPlugin } from 'vitepress-demo-plugin';
+import { vitepressDemoPlugin } from 'vitepress-demo-plugin'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "react-book-reader",
-  description: "react-book-reader document",
+  title: 'react-book-reader',
+  description: 'react-book-reader document',
   base: '/react-book-reader/',
   cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/logo.svg',
-    nav: [{
-      text: "Guide", link: "/guide/introduction"
-    }],
+    nav: [
+      {
+        text: 'Guide',
+        link: '/guide/introduction',
+      },
+    ],
     sidebar: [
       {
         text: 'Guide',
-        items: [
-          {
-            text: "Introduction", link: '/guide'
-          },
-        ],
+        items: [{ text: 'Introduction', link: '/guide' }],
       },
       {
-        text: "Tips",
+        text: 'Tips',
         items: [
           { text: 'page number', link: 'tips/page_number' },
           { text: 'custom css', link: 'tips/custom_css' },
@@ -32,28 +32,25 @@ export default defineConfig({
           { text: 'scrolled', link: 'tips/scrolled' },
           { text: 'book information', link: 'tips/book_information' },
           { text: 'import file', link: 'tips/import_file' },
-          { text: "lightbox", link: "tips/lightbox" },
+          { text: 'current progress', link: 'tips/current_progress' },
+          { text: 'lightbox', link: 'tips/lightbox' },
           { text: 'pdf file', link: 'tips/pdf_file' },
         ],
-      }
+      },
     ],
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/jinhuan138/react-book-reader' }
-    ],
-    search: {
-      provider: 'local',
-    },
-
+    socialLinks: [{ icon: 'github', link: 'https://github.com/jinhuan138/react-book-reader' }],
+    search: { provider: 'local' },
   },
   markdown: {
     config(md) {
       md.use(vitepressDemoPlugin, {
         lightTheme: 'github-light',
         darkTheme: 'github-dark',
-      });
+      })
     },
   },
   vite: {
-    publicDir: resolve(__dirname, "../../public"),
-  }
+    publicDir: resolve(__dirname, '../../public'),
+    plugins: [tailwindcss()],
+  },
 })

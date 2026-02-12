@@ -31,7 +31,6 @@ And in your react-component...
 |       **Module**        |       **Filename**        |
 | ----------------------- | ------------------------- |
 |    UMD(for browsers)    | react-book-reader.umd.js  |
-|        CommonJS         | react--book-reader.cjs.js |
 | ES Module(for bundlers) | react--book-reader.es.js  |
 
 ## ReactReader Attributes
