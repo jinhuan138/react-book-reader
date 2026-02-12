@@ -1,7 +1,6 @@
 import { ReactReader } from 'react-book-reader'
 import { useState } from 'react'
 
-
 let rendition = null
 export default function App() {
     const [current, setCurrent] = useState<number>(0)
@@ -12,7 +11,10 @@ export default function App() {
     }
     return (
         <div style={{ height: '100vh' }}>
-            <ReactReader url="/react-book-reader/files/啼笑因缘.epub" getRendition={(val) => rendition = val} />
+            <ReactReader
+                url="/react-book-reader/files/啼笑因缘.epub"
+                getRendition={(val) => (rendition = val)}
+            />
             <div className="absolute bottom-4 right-4 left-4 z-[1] text-black! flex flex-wrap justify-center">
                 <input
                     className="text-center"
@@ -22,7 +24,8 @@ export default function App() {
                     max={100}
                     step={1}
                     onChange={change}
-                />%
+                />
+                %
                 <input
                     className="w-full"
                     type="range"
