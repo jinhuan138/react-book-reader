@@ -45,7 +45,7 @@ export default function App() {
         setSearchResults(tableResults)
     }
     return (
-        <div style={{ height: '100vh' }}>
+        <div style={{ height: '100vh', position: 'relative' }}>
             <ReactReader
                 url="/react-book-reader/files/啼笑因缘.mobi"
                 getRendition={(val) => (rendition = val)}

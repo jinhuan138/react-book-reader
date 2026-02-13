@@ -1,0 +1,27 @@
+.readerArea {
+  background: #000 !important;
+}
+.readerArea .titleArea {
+  color: #ccc !important;
+}
+
+.readerArea .arrow {
+  color: white !important;
+}
+
+.tocArea {
+  color: #ccc !important;
+  background: #111 !important;
+}
+
+.tocButtonExpanded {
+  background: #222 !important;
+}
+
+.tocButtonBar {
+  background: #fff !important;
+}
+
+.tocButton {
+  color: white !important;
+}

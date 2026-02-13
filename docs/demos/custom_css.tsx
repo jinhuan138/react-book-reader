@@ -1,11 +1,12 @@
 import { ReactReader } from 'react-book-reader'
+import './custom_css.css'
 
 export default function App() {
     const getCSS = () => [
         `
         html {
-        background: #000;
-        color: #fff;
+            background: #000;
+            color: #fff;
         }`,
     ]
     const getRendition = (rendition) => {
