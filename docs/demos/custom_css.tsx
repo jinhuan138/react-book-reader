@@ -1,5 +1,4 @@
 import { ReactReader } from 'react-book-reader'
-import './custom_css.css'
 
 export default function App() {
     const getCSS = () => [
@@ -15,7 +14,7 @@ export default function App() {
         })
     }
     return (
-        <div style={{ height: '100vh' }}>
+        <div style={{ height: '100vh' }} className="custom-css-demo">
             <ReactReader url="/react-book-reader/files/啼笑因缘.epub" getRendition={getRendition} />
         </div>
     )

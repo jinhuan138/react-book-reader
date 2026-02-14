@@ -1,27 +1,26 @@
-.readerArea {
+.custom-css-demo .readerArea {
   background: #000 !important;
 }
-.readerArea .titleArea {
+.custom-css-demo .readerArea .titleArea {
   color: #ccc !important;
 }
-
-.readerArea .arrow {
+.custom-css-demo .readerArea .arrow {
   color: white !important;
 }
 
-.tocArea {
+.custom-css-demo .tocArea {
   color: #ccc !important;
   background: #111 !important;
 }
 
-.tocButtonExpanded {
+.custom-css-demo .tocButtonExpanded {
   background: #222 !important;
 }
 
-.tocButtonBar {
+.custom-css-demo .tocButtonBar {
   background: #fff !important;
 }
 
-.tocButton {
+.custom-css-demo .tocButton {
   color: white !important;
 }
