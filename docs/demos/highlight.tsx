@@ -66,7 +66,7 @@ export default function App() {
         <>
             <div style={{ height: '100vh' }}>
                 <ReactReader
-                    url="/react-book-reader/files/alice.epub"
+                    url="/react-book-reader/files/啼笑因缘.epub"
                     getRendition={getRendition}
                 />
             </div>
@@ -94,7 +94,7 @@ export default function App() {
                                             className="text-neutral-500 text-center bg-orange-500 cursor-pointer rounded-sm p-2"
                                             onClick={() => remove(index)}
                                         >
-                                            Remove
+                                            remove
                                         </button>
                                     </div>
                                 </li>
