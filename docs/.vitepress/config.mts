@@ -36,6 +36,7 @@ export default defineConfig({
           { text: 'search', link: 'tips/search' },
           { text: 'lightbox', link: 'tips/lightbox' },
           { text: 'pdf file', link: 'tips/pdf_file' },
+          { text: 'highlight', link: 'tips/highlight' },
         ],
       },
     ],

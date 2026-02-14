@@ -16,7 +16,7 @@
     "vitepress": "1.6.4"
   },
   "dependencies": {
-    "react-book-reader": "^1.1.6",
+    "react-book-reader": "^1.1.8",
     "vitepress-demo-plugin": "^1.5.1",
     "yet-another-react-lightbox-lite": "^1.10.0"
   }

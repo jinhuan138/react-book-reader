@@ -4,6 +4,7 @@ import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { name, version } from './package.json'
 import tailwindcss from '@tailwindcss/vite'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 //https://www.runoob.com/tailwindcss/tailwindcss-tutorial.html
 //https://tailwindcss.com/docs/installation/using-vite
 
@@ -17,6 +18,14 @@ export default defineConfig({
       filename: `stats${version}.html`,
     }) as PluginOption,
     tailwindcss(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: './src/packages/foliate-js/overlayer.js',
+          dest: '',
+        },
+      ],
+    }),
   ],
   build: {
     copyPublicDir: false,
@@ -41,6 +50,7 @@ export default defineConfig({
           'react/jsx-dev-runtime': 'ReactJSXDevRuntime',
         },
         exports: 'named',
+        inlineDynamicImports: true,
       },
     },
   },

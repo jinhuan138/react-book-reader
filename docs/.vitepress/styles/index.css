@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import '../../../src/index.css';
 
 :root {
   --vp-c-brand-1: #f44336;
