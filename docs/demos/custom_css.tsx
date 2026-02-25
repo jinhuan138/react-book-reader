@@ -1,17 +1,13 @@
 import { ReactReader } from 'react-book-reader'
 
 export default function App() {
-    const getCSS = () => [
-        `
-        html {
-            background: #000;
-            color: #fff;
-        }`,
-    ]
     const getRendition = (rendition) => {
-        rendition.addEventListener('load', () => {
-            rendition.renderer.setStyles(getCSS())
-        })
+        rendition.renderer.setStyles([
+            `html {
+                background: #000;
+                color: #fff;
+            }`,
+        ])
     }
     return (
         <div style={{ height: '100vh' }} className="custom-css-demo">
