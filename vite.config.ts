@@ -32,7 +32,6 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: false,
     minify: true,
-    outDir: 'lib',
     lib: {
       entry: 'src/packages/index.ts',
       name,

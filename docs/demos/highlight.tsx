@@ -1,6 +1,6 @@
 import { ReactReader } from 'react-book-reader'
 import { useState } from 'react'
-import { Overlayer } from 'react-book-reader/lib/overlayer.js'
+import { Overlayer } from 'react-book-reader/dist/overlayer.js'
 let rendition = null
 
 interface Item {
@@ -80,9 +80,9 @@ export default function App() {
                                     key={index}
                                     className="flex justify-between py-0.5 mx-5 text-2xl!"
                                 >
-                                    <div className="w-[60%] truncate cursor-pointer" title={text}>
+                                    <span className="w-[60%] truncate cursor-pointer" title={text}>
                                         {text}
-                                    </div>
+                                    </span>
                                     <div>
                                         <button
                                             className="text-neutral-500  text-center bg-orange-500 cursor-pointer mr-1 rounded-sm p-2"
