@@ -1,4 +1,5 @@
 import { ReactReader } from 'react-book-reader'
+import './custom_css.css'
 
 export default function App() {
     const getRendition = (rendition) => {
