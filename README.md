@@ -40,7 +40,7 @@ export default () => (
     {/* Supports EPUB, MOBI, KF8 (AZW3), FB2, CBZ, PDF */}
     <ReactReader url="/files/啼笑因缘.epub" />
   </div>
-);
+)
 ```
 
 ## ReactReader Attributes
@@ -52,15 +52,14 @@ export default () => (
 | title    | the title of the book             | `string`/`ReactElement` | —           |
 | showToc  | whether to show the toc           | `boolean`               | true        |
 
-
 ## ReactReader props passed to inner BookView
 
-| **Name**    | **Description**                           | **Type**                          | **Default**      |
-| ----------- | ----------------------------------------- | --------------------------------- | ---------------- |
-| url         | book url or File                          | `string`/`File`                   |                  |
-| tocChanged  | when the reader has parsed the book you will receive an array of the chapters | `function(toc)`  |
-| nextPage    | display  next page                                                            | `function`       |
-| prevPage    | display  previous page                                                        | `function`       |
-| setLocation | Set the page                                                                  | `function(href)` |
-| LoadingView | if you want to customize the LoadingView                                      | `element`        |
-| ErrorView   | if you want to customize the ErrorView                                        | `element`        |
+| **Name**    | **Description**                                                               | **Type**         | **Default** |
+| ----------- | ----------------------------------------------------------------------------- | ---------------- | ----------- |
+| url         | book url or File                                                              | `string`/`File`  |             |
+| tocChanged  | when the reader has parsed the book you will receive an array of the chapters | `function(toc)`  |             |
+| nextPage    | display next page                                                             | `function`       |             |
+| prevPage    | display previous page                                                         | `function`       |             |
+| setLocation | Set the page                                                                  | `function(href)` |             |
+| LoadingView | if you want to customize the LoadingView                                      | `element`        |             |
+| ErrorView   | if you want to customize the ErrorView                                        | `element`        |             |
